@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Tem certeza de que deseja deletar esse funcionario?</h1>
+<div mat-dialog-subtitle>
+  <p>Essa ação será permanente</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false" >Cancelar</button><!--Na hora que o dialog for fechado ele vai retornar um valor true. è uma diretiva do proprio dialog-->
+  <button mat-button cdkFocusInitia [mat-dialog-close]="true">Ok</button>
+</div>

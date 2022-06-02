@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Você ainda não salvou!</h1>
+<div mat-dialog-subtitle>
+  <p>Os dados do formulário ainda não foram salvos. Quer mesmo sair sem salvar?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="warn" [mat-dialog-close]="true" >Continuar</button><!--Na hora que o dialog for fechado ele vai retornar um valor true. è uma diretiva do proprio dialog-->
+  <button mat-button cdkFocusInitia color="accent" [mat-dialog-close]="false">Cancelar</button>
+</div>

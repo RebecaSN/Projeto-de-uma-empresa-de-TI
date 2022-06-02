@@ -1,0 +1,21 @@
+#main-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+#file-input {
+  display: none;
+}
+
+.btn {
+  width: 150px;
+}
+
+.flex-container > button{/*quero pegar um elemento button que é filho direto um botão, orimeiro filho*/
+  position:absolute;
+  left: 68px;
+  top:50px;
+
+
+}

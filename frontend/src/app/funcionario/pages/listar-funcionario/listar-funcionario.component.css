@@ -1,0 +1,12 @@
+.fun-table {
+  width: 90%;
+}
+.column{
+  flex-direction: column;
+}
+
+.add{
+  position:absolute;/* é como se a posição dela ficasse relativa ao alemento pai, vai ficar junto ao elemento pai, nesse caso o elemento pai é */
+  right:68px;/* vai se distancia 68px distante da direita e 50px distante na parte debaixo, é como se o elemento tivesse flutuando*/
+  bottom: 50px;
+}

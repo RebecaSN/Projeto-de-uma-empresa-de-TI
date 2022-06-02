@@ -1,0 +1,25 @@
+<div class="flex-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form action="" id="main-form" [formGroup]="usuario" (ngSubmit)="submit()">
+                <mat-form-field apparecence="outline">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput formControlName="login" >
+                </mat-form-field>
+
+                <mat-form-field apparecence="outline">
+                    <mat-label>Senha</mat-label>
+                    <input type="password" matInput formControlName="password">
+                </mat-form-field>
+                <button mat-raised-button type="submit" color="accent">
+                    <mat-icon>
+                        login
+                    </mat-icon>
+                </button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,30 @@
+<div class="flex-container">
+<button mat-fab color="primary" routerLink="/funcionario"> <mat-icon>arrow_left</mat-icon> </button>
+
+  <mat-card>
+    <form action="" id="main-form" [formGroup]="funcionario" (ngSubmit)="submit()"><!--evento especial de angular-->
+      <mat-form-field appearance="outline">
+        <mat-label>Nome do Funcionário</mat-label>
+        <input type="text" matInput formControlName="nome">
+        <mat-error>
+          Este campo é obrigatório
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail do Funcionário</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error>
+          <span *ngIf="funcionario.get('email')?.getError('required')">
+            Este campo é obrigatório
+          </span>
+          <span *ngIf="funcionario.get('email')?.getError('email')">
+            Digite um e-mail válido
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" class="btn" (click)="selectImage()">Adicionar Foto</button>
+      <input type="file" id="file-input" #fileInput formControlName="foto" accept="image/*" (change)="fileChange($event)"><!--quando a gente executa um input, ele emite um evento chamado change, e vamos ouvir esse input para pegar seu aruivo-->
+      <button mat-raised-button color="accent" type="submit" style="margin-top: 10px;" [disabled]="funcionario.invalid" >Cadastrar</button>
+    </form>
+  </mat-card>
+</div>

@@ -1,0 +1,39 @@
+<div class="flex-container">
+  <table mat-table [dataSource]="funcionarios" class="fun-table mat-elevation-z8">
+    <ng-container matColumnDef="idFuncionario">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let fun">{{ fun.idFuncionario }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let fun">
+        <a [routerLink]="'/funcionario/' + fun.idFuncionario">
+          {{ fun.nome }}
+        </a>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-mail</th>
+      <td mat-cell *matCellDef="let fun">{{ fun.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let fun">
+        <button [routerLink]="'/funcionario/edit/'+ fun.idFuncionario" mat-icon-button color="accent">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" style="margin-left: 10px;" (click)="openDialog(fun.idFuncionario)"><!--É na variavel fun qu contem os dados do funcionario, sendo então a partit dela que eu vou pegar o id-->
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+</div>
+<button mat-mini-fab class="add" color="primary" routerLink="/funcionario/novo-funcionario">
+  <mat-icon>add</mat-icon>
+</button>

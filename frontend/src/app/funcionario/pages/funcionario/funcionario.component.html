@@ -1,0 +1,14 @@
+<div class="flex-container">
+    <button mat-fab color="primary" routerLink="/funcionario"> <mat-icon>arrow_left</mat-icon> </button>
+    <mat-card>
+        <img [src]="funcionario.foto == null ? '/assets/blank-profile-picture-973460_1280.webp': funcionario.foto" alt="" mat-card-image class="fun-img">
+        <mat-card-content>
+            <mat-card-title>
+                {{funcionario.nome}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{funcionario.email}}
+            </mat-card-subtitle>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,7 @@
+<button id="logout" mat-mini-fab color="warn" *ngIf="logged$" (click)="logout()" ><!--quero que ele apareca somente quan o uuario que esteja logado, e eu preciso me inscrever nele para ver os valores por ele retornado, para isso eu uso o async: o pipe que eu uso para poder me inscrever em subject pelo html-->
+    <mat-icon>
+        logout
+    </mat-icon>
+
+</button><!--como ele vai se repetir em varias outras paginas, vou colocar ele no app component-->
+<router-outlet></router-outlet>
